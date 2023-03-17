@@ -11,7 +11,7 @@ Multi Conversor es un programa desarrollado para Alura LATAM + Oracle Next Educa
 
 - **Facil de usar**
 
-> Pprograma simple y facil de usar con su interfaz amigable. Vea la siguiente demostracion:
+> Programa simple y facil de usar con su interfaz amigable. Vea la siguiente demostracion:
 
 <p align="center">
 	
