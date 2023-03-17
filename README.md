@@ -7,12 +7,11 @@
 
 ## Introducción
 
-Multi Conversor es un programa desarrollado para Alura LATAM + Oracle Next Education
-Especializacion Java BackEnd
+Multi Conversor es un programa desarrollado para Alura LATAM + Oracle Next Education + Especializacion BackEnd.
 
 - **Facil de usar**
 
-> Multi Conversor es un programa simple y facil de usar. Vea la siguiente demostracion:
+> Pprograma simple y facil de usar con su interfaz amigable. Vea la siguiente demostracion:
 
 <p align="center">
 	
