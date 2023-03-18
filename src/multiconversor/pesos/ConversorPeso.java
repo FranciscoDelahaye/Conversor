@@ -1,29 +1,44 @@
 package multiconversor.pesos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import multiconversor.panelprincipal.PanelPrincipal;
 import multiconversor.recursos.Funciones;
 import multiconversor.recursos.InterfaceNuevoIntento;
+import multiconversor.recursos.Lista;
 
 public class ConversorPeso extends Funciones implements InterfaceNuevoIntento {
-	private String [] pesoNombre = {"Tonelada","Kilogramo","Gramo","Miligramo","Libra","Onza"};
-	private String [] pesoSimbolo = {"t","kg","g","mg","lb","oz"};
-	private double [] pesoGramoAuxiliares = {0.000001, 0.001, 1, 1000, 0.0022046244201837776, 0.03527461286112385};
-	private double [] pesoElegidaAuxiliares = {0,0,0,0,0,0};
-	private double pesoEnGramos=0.0;
-	private int indexAux=-1;
+	private List<Lista> pesoList = new ArrayList<>();
+	private String [] pesoArrayNombre;
+	private double [] pesoElegidoAuxiliares;
 	private String pesoTitle = " - Peso";
 	
 	public void conversorPesoPanel() {
+		pesoList.add(0, new Lista("Tonelada", "t", 0.000001));
+		pesoList.add(1, new Lista("Kilogramo", "kg", 0.001));
+		pesoList.add(2, new Lista("Gramo", "g", 1));
+		pesoList.add(3, new Lista("Miligramo", "mg", 1000));
+		pesoList.add(4, new Lista("Libra", "lb", 0.0022046244201837776));
+		pesoList.add(5, new Lista("Onza", "oz", 0.03527461286112385));
+		pesoArrayNombre = new String[pesoList.size()];
+		pesoElegidoAuxiliares = new double[pesoList.size()];		
 		double cantidadElegida=0;
+		int gramoIndex=-1, opcionElegidaIndex=-1;
+		
+		for(int i=0; i<pesoList.size(); i++) {
+			pesoArrayNombre[i] = pesoList.get(i).getName();
+		}
+		
 		Object inputPesoOpcion = createInputOption(null,
 				"Seleccione escala de peso/masa a usar para convertir",
 				pesoTitle,
 				JOptionPane.PLAIN_MESSAGE,
 				null,
-				pesoNombre,
-				pesoNombre[0]);
+				pesoArrayNombre,
+				pesoArrayNombre[0]);
 		if(inputPesoOpcion==null)	nuevoIntentoEjecutar(nuevoIntentoDialog("Se cancelo operacion."));
 		
 		String inputPesoValor = createInputTextArea(null,
@@ -35,38 +50,30 @@ public class ConversorPeso extends Funciones implements InterfaceNuevoIntento {
 		cantidadElegida=validarInputStringToDouble(inputPesoValor);
 		if(cantidadElegida<=0)			nuevoIntentoEjecutar(nuevoIntentoDialog("Solo se permiten valores numericos mayor a 0."));
 		
-		for(int i=0; i<pesoNombre.length; i++) {
-			if(pesoNombre[i]==inputPesoOpcion) {
-				indexAux=i;
-				break;
-			}
+		for(int i=0; i<pesoList.size(); i++) {
+			if(pesoList.get(i).getSymbol() == "g") 					gramoIndex = i;
+			if(pesoList.get(i).getName() == inputPesoOpcion) 		opcionElegidaIndex = i;
 		}
 		
-		if(indexAux!=-1) {
-			pesoEnGramos = aGramo(cantidadElegida,indexAux);
-			calculoDeGramoATodo(cantidadElegida, pesoEnGramos, pesoSimbolo[indexAux], pesoSimbolo);
-			nuevoIntentoEjecutar(nuevoIntentoDialog("Calculo Realizado."));
-		}
-	}
-	
-	private double aGramo(double valor, int index) {
-		return (valor/pesoGramoAuxiliares[index]);
-	}
-	
-	private void calculoDeGramoATodo(double valor, double valorEnGramos, String pesoSimbolo, String []pesoSimboloArr) {
-		for(int i=0; i<pesoNombre.length; i++) {
-			pesoElegidaAuxiliares[i] = valorEnGramos * pesoGramoAuxiliares[i];
-		}
-		createShowMessage(null,
-				"Resultados de convertir "+valor+" ("+pesoSimbolo+")\n\n"
-				+String.format("%.5f",pesoElegidaAuxiliares[0])+" "+pesoNombre[0]+" ("+pesoSimboloArr[0]+")\n"
-				+String.format("%.5f",pesoElegidaAuxiliares[1])+" "+pesoNombre[1]+" ("+pesoSimboloArr[1]+")\n"
-				+String.format("%.5f",pesoElegidaAuxiliares[2])+" "+pesoNombre[2]+" ("+pesoSimboloArr[2]+")\n"
-				+String.format("%.5f",pesoElegidaAuxiliares[3])+" "+pesoNombre[3]+" ("+pesoSimboloArr[3]+")\n"
-				+String.format("%.5f",pesoElegidaAuxiliares[4])+" "+pesoNombre[4]+" ("+pesoSimboloArr[4]+")\n"
-				+String.format("%.5f",pesoElegidaAuxiliares[5])+" "+pesoNombre[5]+" ("+pesoSimboloArr[5]+")\n",
-				pesoTitle,
-				JOptionPane.PLAIN_MESSAGE);
+		try {
+			StringBuilder resultString = new StringBuilder();
+			pesoElegidoAuxiliares[gramoIndex] = cantidadElegida / pesoList.get(opcionElegidaIndex).getEquivalencia();
+			resultString.append("Resultados de convertir "+cantidadElegida+" ("+pesoList.get(opcionElegidaIndex).getName()+")\n\n");
+			
+			for(int i=0; i<pesoList.size(); i++) {
+				pesoElegidoAuxiliares[i] = pesoElegidoAuxiliares[gramoIndex] * pesoList.get(i).getEquivalencia();
+				if(i != opcionElegidaIndex) {
+					resultString.append(String.format("%.5f",pesoElegidoAuxiliares[i])+" "+pesoList.get(i).getName()+" ("+pesoList.get(i).getSymbol()+")\n");
+				}				
+			}
+			createShowMessage(null,
+					resultString, 
+					pesoTitle,
+					JOptionPane.PLAIN_MESSAGE);
+		} catch (Exception e) {
+			nuevoIntentoEjecutar(nuevoIntentoDialog("Ocurrio un error."));
+		}	
+		nuevoIntentoEjecutar(nuevoIntentoDialog("Calculo Realizado."));
 	}
 
 	@Override
