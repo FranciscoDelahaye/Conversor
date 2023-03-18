@@ -30,6 +30,12 @@ https://user-images.githubusercontent.com/59628721/225982365-9c365b42-45df-4c35-
 	<a href="https://imgbox.com/LVKRjO7m" target="_blank"><img src="https://images2.imgbox.com/bc/1c/LVKRjO7m_o.jpg" alt="Imagen Codigo Divisa"/></a>
 </p>
 
+> Solo agregando 1 linea de codigo podemos añadir una nueva escala de longitud a nuestro programa. Como el ejemplo, la escala de longitud incluida debe incluir su equivalencia de 1 centimetro (1cm = 0.1dc).
+
+<p align="center">
+	<a href="https://imgbox.com/J5L4WGWi" target="_blank"><img src="https://images2.imgbox.com/41/73/J5L4WGWi_o.png" alt="Imagen Codigo Longitud"/></a>
+</p>
+
 - **Conexion con API**
 
 > Conversiones de divisas en tiempo real con la ayuda de APILayer - Exchange Rates Data API.

@@ -2,13 +2,13 @@ package multiconversor.panelprincipal;
 import multiconversor.divisas.ConversorDivisas;
 import multiconversor.longitud.ConversorLongitud;
 import multiconversor.pesos.ConversorPeso;
-import multiconversor.recursos.Grafico;
+import multiconversor.recursos.Funciones;
 import multiconversor.temperaturas.ConversorTemperatura;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class PanelPrincipal extends Grafico {
+public class PanelPrincipal extends Funciones {
 	private String [] panelPrincipalOpciones = {"Divisas","Temperatura","Longitud","Peso"};
 	private ImageIcon panelPrincipalIcon;
 	private String panelPrincipalImageSrc = "src/multiconversor/recursos/imageIcon.png";
@@ -32,7 +32,6 @@ public class PanelPrincipal extends Grafico {
 		switch (indexAux) {
 			case 0:
 				ConversorDivisas conversor_divisas = new ConversorDivisas();
-				conversor_divisas.initSimbolo();
 				conversor_divisas.conversorDivisasPanel();
 			case 1:
 				ConversorTemperatura conversor_temperatura = new ConversorTemperatura();

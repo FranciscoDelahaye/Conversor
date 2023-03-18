@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class Grafico {
+public class Funciones {
 	private static final String appName = "Multi Conversor";
 	private String [] intentarNuevamente = {"Si, volver a intentar","No, volver al menu principal","Salir"};
 	private String titleFinal = appName+" Challenge BackEnd Alura";

@@ -3,10 +3,10 @@ package multiconversor.temperaturas;
 import javax.swing.JOptionPane;
 
 import multiconversor.panelprincipal.PanelPrincipal;
-import multiconversor.recursos.Grafico;
-import multiconversor.recursos.NuevoIntento;
+import multiconversor.recursos.Funciones;
+import multiconversor.recursos.InterfaceNuevoIntento;
 
-public class ConversorTemperatura extends Grafico implements NuevoIntento {
+public class ConversorTemperatura extends Funciones implements InterfaceNuevoIntento {
 	private String [] temperaturaNombre = {"Celsius (°C)","Fahrenheit (°F)","Kelvin (°K)"};
 	private double [] temperaturaAuxiliares = {0, 0, 0};
 	private int indexAux=-1;

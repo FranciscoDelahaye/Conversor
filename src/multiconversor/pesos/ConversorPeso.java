@@ -3,10 +3,10 @@ package multiconversor.pesos;
 import javax.swing.JOptionPane;
 
 import multiconversor.panelprincipal.PanelPrincipal;
-import multiconversor.recursos.Grafico;
-import multiconversor.recursos.NuevoIntento;
+import multiconversor.recursos.Funciones;
+import multiconversor.recursos.InterfaceNuevoIntento;
 
-public class ConversorPeso extends Grafico implements NuevoIntento {
+public class ConversorPeso extends Funciones implements InterfaceNuevoIntento {
 	private String [] pesoNombre = {"Tonelada","Kilogramo","Gramo","Miligramo","Libra","Onza"};
 	private String [] pesoSimbolo = {"t","kg","g","mg","lb","oz"};
 	private double [] pesoGramoAuxiliares = {0.000001, 0.001, 1, 1000, 0.0022046244201837776, 0.03527461286112385};
@@ -14,7 +14,7 @@ public class ConversorPeso extends Grafico implements NuevoIntento {
 	private double pesoEnGramos=0.0;
 	private int indexAux=-1;
 	private String pesoTitle = " - Peso";
-
+	
 	public void conversorPesoPanel() {
 		double cantidadElegida=0;
 		Object inputPesoOpcion = createInputOption(null,
