@@ -9,7 +9,7 @@ Multi Conversor es una aplicación que cuenta con cuatro conversores, Conversor 
 
 Esta app es una solución desarrollada para Alura LATAM + Oracle Next Education + Especializacion BackEnd.
 
-Si te gusta Marca este proyecto con una estrella ⭐
+Si te gusta marca este proyecto con una estrella ⭐
 
 - **Facil de usar**
 
