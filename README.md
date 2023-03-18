@@ -36,6 +36,12 @@ https://user-images.githubusercontent.com/59628721/225982365-9c365b42-45df-4c35-
 	<a href="https://imgbox.com/J5L4WGWi" target="_blank"><img src="https://images2.imgbox.com/41/73/J5L4WGWi_o.png" alt="Imagen Codigo Longitud"/></a>
 </p>
 
+> Solo agregando 1 linea de codigo podemos añadir una nueva escala de peso/masa a nuestro programa. Como el ejemplo, la escala de peso incluida debe incluir su equivalencia de 1 gramo (1g = 0.001kg).
+
+<p align="center">
+	<a href="https://imgbox.com/RJSK3mQn" target="_blank"><img src="https://images2.imgbox.com/b1/7e/RJSK3mQn_o.png" alt="Imagen Codigo Peso"/></a>
+</p>
+
 - **Conexion con API**
 
 > Conversiones de divisas en tiempo real con la ayuda de APILayer - Exchange Rates Data API.
