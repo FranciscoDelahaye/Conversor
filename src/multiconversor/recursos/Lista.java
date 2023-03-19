@@ -11,7 +11,7 @@ public class Lista {
 			setSymbol(symbol);
 		}
 	}
-	
+
 	public Lista(String name, String symbol, double equivalencia) {
 		if(name!=null && symbol!=null && equivalencia!=0) {
 			setName(name);

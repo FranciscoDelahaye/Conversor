@@ -69,7 +69,7 @@ public class ConversorDivisas extends Funciones implements InterfaceNuevoIntento
 					JOptionPane.PLAIN_MESSAGE);
 		}
 		else {
-			nuevoIntentoEjecutar(nuevoIntentoDialog("Ocurrio un problema para calcular la conversion de divisas.\n\nVerifique su conexion a internet e intentelo de nuevo."));
+			nuevoIntentoEjecutar(nuevoIntentoDialog("Error de API."));
 		}
 		nuevoIntentoEjecutar(nuevoIntentoDialog("Calculo realizado."));
 	}
