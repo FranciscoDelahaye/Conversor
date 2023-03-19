@@ -1,22 +1,24 @@
-<h1 align="center">Multi Conversor</h1>
-<h3 align="center">Convierta facilmente divisas, temperaturas, longitudes y peso</h3>
-
 <p align="center">
 	<a href="https://imgbox.com/V81qQ64V" target="_blank"><img src="https://images2.imgbox.com/9e/d5/V81qQ64V_o.png" alt="Imagen Multi Conversor"/></a>
 </p>
+<h3 align="center">Convierta facilmente divisas, temperaturas, longitudes y peso</h3>
 
 ## Introducción
 
-Multi Conversor es un programa desarrollado para Alura LATAM + Oracle Next Education + Especializacion BackEnd.
+Multi Conversor es una aplicación que cuenta con cuatro conversores, Conversor de Divisas en tiempo real con la tasa actual de cambio, Conversor de Temperaturas, Conversor de Longitudes y Conversor de Pesos.
+
+Esta app es una solución desarrollada para Alura LATAM + Oracle Next Education + Especializacion BackEnd.
+
+Si te gusta marca este proyecto con una estrella ⭐
 
 - **Facil de usar**
 
 > Programa simple y facil de usar con su interfaz amigable. Vea la siguiente demostracion:
 
 <p align="center">
-	
 
-https://user-images.githubusercontent.com/59628721/225982365-9c365b42-45df-4c35-8016-c30a9f31694c.mp4
+
+https://user-images.githubusercontent.com/59628721/226124523-5f6ffeb1-0071-490a-b426-154c8ef14981.mp4
 
 
 </p>
